@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>@ViewData["Title"] - Guni Kitchen</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/flaticon.css" />
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/bootsnav.css">
+    <link rel="stylesheet" href="~/css/color.css">
+    <link rel="stylesheet" href="~/css/custom.css" />
+
+    <!--[if lt IE 9]>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#navbar-menu" data-offset="100">
+
+    <!-- Preloader --> 
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_five"></div>
+                <div class="object" id="object_six"></div>
+                <div class="object" id="object_seven"></div>
+                <div class="object" id="object_eight"></div>
+                <div class="object" id="object_big"></div>
+            </div>
+        </div>
+    </div>
+    <!--End Preloader -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default bootsnav no-background navbar-fixed black">
+        <div class="container">  
+
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="side-menu"><a href="#"><i class="fa fa-bars" style="margin-top: 3.2rem;"></i></a></li>
+                </ul>
+            </div>        
+            <!-- End Atribute Navigation -->
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <a class="navbar-brand"  asp-area="" asp-page="/Index"><img src="~/images/logo.png" class="logo" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+        </div>   
+
+        <!-- Start Side Menu -->
+        <div class="side">
+            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+            <div class="widget">
+                <h4 class="title">Menu</h4>
+                <hr />
+                <br />
+                <partial name="_LoginPartial" />
+                <br />
+                <hr />
+                <br />
+                <ul class="link" style="line-height: 2.5rem;">
+                    <li>
+                        <a asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="/Privacy">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#footer_contactus">Contact us</a>
+                    </li>
+                      <li>
+                <a asp-area="Manage" asp-controller="Products1" asp-action="Index">Products</a>
+            </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Side Menu -->
+    </nav>
+
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Lock -->
+    <section id="lock">
+        <h2>SERVING MORE THAN JUST BURGERS AND PIZZA SINCE 2010</h2>
+        <p class="mt-2">Check out our opening hours and location address below.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <!-- Container -->
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-sm-4 col-xs-12 col-lg-offset-1 pull-right">
+                    <div class="subscribe">
+                        <h4>Subscribe now</h4>
+                        <p>Subscribe to our newsletter and get updates and offers every week.</p>
+
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="em" placeholder="Enter your e-mail here" />
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn send_btn">
+                                            <i class="glyphicon glyphicon-send"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-4 col-xs-12 col-lg-offset-1 pull-right">
+                    <div class="contact_us">
+                        <a name="footer_contactus"></a>
+                        <h4>Contact Us</h4>
+                        <a href="">info@gunikitchen.com</a>
+                        <address>
+                            420, This and That Street,<br />
+                            Ha-Ha Road, Dull Rest Area,<br />
+                            Chailand.
+                        </address>
+                        <h4 style="padding-bottom: 12px;">Timings</h4>
+                        <address>
+                            07:00 am to 11:00 am<br />
+                            04:00 pm to 11:00 pm<br />
+                            Tuesday holiday
+                        </address>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-xs-12 pull-right">
+                    <div class="basic_info">
+                        <a href=""><img class="footer_logo" src="~/images/logo.png" alt="" /></a>
+
+                        <ul class="list-inline social">
+                            <li><a href="" class="fa fa-facebook"></a></li>
+                            <li><a href="" class="fa fa-twitter"></a></li>
+                            <li><a href="" class="fa fa-instagram"></a></li>
+                        </ul>
+
+                        <div class="footer-copyright">
+                            <p class="wow fadeInRight" data-wow-duration="1s">
+                                Made with <i class="fa fa-heart"></i> by Maulik Patel
+                                
+                                Theme by <a target="_blank" href="http://bootstrapthemes.co">Bootstrap Themes</a> 
+                            </p>
+                        </div>					
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Container end -->
+    </footer>
+    <!-- Footer end -->
+
+
+    <!-- scroll up-->
+    <div class="scrollup">
+        <a href="#"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- End of scroll up -->
+
+    <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>	
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="~/js/bootsnav.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>	
+</html>	

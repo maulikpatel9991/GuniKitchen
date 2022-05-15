@@ -1,0 +1,60 @@
+﻿@page
+@using GuniKitchen.Web.Models.Enums
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<h4>@ViewData["Title"]</h4>
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.PhoneNumber"></label>
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Input.DisplayName"></label>
+                <input asp-for="Input.DisplayName" class="form-control" />
+                <span asp-validation-for="Input.DisplayName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DateOfBirth"></label>
+                <input asp-for="Input.DateOfBirth" class="form-control" />
+                <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Input.IsAdminUser" class="form-check-input" />
+                <label asp-for="Input.IsAdminUser" class="form-check-label"></label>
+                <span asp-validation-for="Input.IsAdminUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Gender" class="control-label"></label>
+                <br />
+                @foreach(var item in Enum.GetValues(typeof(MyIdentityGenders)).OfType<MyIdentityGenders>())
+                {
+                    <input type="radio" 
+                           asp-for="Input.Gender" value="@((int)item)" 
+                           checked="@(item == Model?.Input.Gender)" />
+                    <label asp-for="Input.Gender">@item</label>
+                }
+                <span asp-validation-for="Input.Gender" class="text-danger" style="display: block"></span>
+            </div>
+
+            <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
